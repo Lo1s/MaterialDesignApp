@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button_destroy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_light"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:elevation="10dp"
+        android:onClick="destroy"
+        android:drawableTint="?android:colorPrimary"
+        />
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        card_view:cardCornerRadius="4dp"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:elevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_cardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cardview_dark_background"
+                android:layout_centerInParent="true"
+                android:textSize="20sp"
+                android:text="Test">
+            </TextView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/sym_def_app_icon"
+                android:layout_alignTop="@id/textView_cardView"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="20dp"/>
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:scrollbars="vertical"
+        android:layout_width="100dp"
+        android:layout_height="200dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/button_hide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_hide"
+        android:textAllCaps="false"
+        android:layout_below="@id/my_recycler_view"
+        android:elevation="10dp"
+        android:onClick="hide"/>
+
+    <Button
+        android:id="@+id/button_reveal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_reveal"
+        android:textAllCaps="false"
+        android:layout_below="@id/button_hide"
+        android:elevation="10dp"
+        android:onClick="reveal"/>
+
+    <Button
+        android:id="@+id/button_explode_transition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_explode_transition"
+        android:textAllCaps="false"
+        android:onClick="startExplodeTransition"
+        android:layout_below="@id/button_reveal"
+        />
+
+    <Button
+        android:id="@+id/button_shared_transition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_shared_transition"
+        android:textAllCaps="false"
+        android:layout_below="@id/button_explode_transition"
+        android:onClick="startSharedTransition"
+        android:transitionName="button_shared_transition_test"/>
+
+
+
+</RelativeLayout>
